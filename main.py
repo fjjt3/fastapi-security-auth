@@ -6,15 +6,14 @@ app = FastAPI()
 def index():
     return 'Hallo Welt'
 
-# id here is a path parameter
-@app.get("/property/{id}")
-def property(id: int):
-    return {f' This is a property page for property {id}'}
-
-@app.get('/profile/{username}')
+@app.get('/user/{username}')
 def profile(username: str):
     return {f'This is a profile page for use: {username}'}
 
-@app.get('/movies')
-def movies():
-    return {'movie list':{'movie 1','movie 2','movie 3'}}
+@app.get('/products')
+def products(id=1, price=0):
+    return {f'Product with an id: {id} and price {price}'}
+
+@app.get('/profile/{userid}/comments')
+def profile(userid:int, commentid:int):
+    return {f'Profile page for user id{userid} and comment with {commentid}'}
