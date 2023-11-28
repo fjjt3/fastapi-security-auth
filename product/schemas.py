@@ -6,7 +6,7 @@ class Product(BaseModel):
     price: int
 
 class DisplaySeller(BaseModel):
-    name: str
+    username: str
     email: str
 
     class Config:
@@ -21,7 +21,10 @@ class DisplayProduct(BaseModel):
         from_attributes = True
 
 class Seller(BaseModel):
-    name: str
+    username: str
     email: str
     password: str
 
+class Login(BaseModel):
+    username: str
+    password: str

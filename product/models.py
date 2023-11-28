@@ -13,7 +13,7 @@ class Product(Base):
 class Seller(Base):
     __tablename__ = 'sellers'
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String)
+    username = Column(String)
     email = Column(String)
     password = Column(String)
     products = relationship('Product', back_populates='seller')
